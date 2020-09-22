@@ -34,6 +34,7 @@ Requires:	gstreamer-plugins-base >= 1.12
 Requires:	gtk+3 >= 3.16
 Requires:	hicolor-icon-theme
 Requires:	libhandy1 >= 1
+ExclusiveArch:	%{x8664} %{ix86} x32 aarch64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
