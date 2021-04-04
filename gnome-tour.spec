@@ -2,7 +2,7 @@ Summary:	GNOME Tour and Greeter
 Summary(pl.UTF-8):	Przewodnik i powitanie środowiska GNOME
 Name:		gnome-tour
 Version:	40.0
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-tour/40/%{name}-%{version}.tar.xz
@@ -22,7 +22,7 @@ BuildRequires:	gtk+3-devel >= 3.16
 BuildRequires:	libhandy1-devel >= 1
 BuildRequires:	meson >= 0.50
 BuildRequires:	ninja >= 1.5
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.005
 BuildRequires:	rust
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -36,6 +36,9 @@ Requires:	hicolor-icon-theme
 Requires:	libhandy1 >= 1
 ExclusiveArch:	%{x8664} %{ix86} x32 aarch64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# debugsource packages don't support rust
+%define		_debugsource_packages	0
 
 %description
 A guided tour and greeter for GNOME.
