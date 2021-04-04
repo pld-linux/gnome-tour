@@ -1,12 +1,12 @@
 Summary:	GNOME Tour and Greeter
 Summary(pl.UTF-8):	Przewodnik i powitanie środowiska GNOME
 Name:		gnome-tour
-Version:	3.38.0
+Version:	40.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tour/3.38/%{name}-%{version}.tar.xz
-# Source0-md5:	b0c0bfe5806fdf31bbe840c464c6a479
+Source0:	https://download.gnome.org/sources/gnome-tour/40/%{name}-%{version}.tar.xz
+# Source0-md5:	d5ca4c8a9b248017c4e75fa4722caad0
 URL:		https://gitlab.gnome.org/GNOME/gnome-tour
 BuildRequires:	appstream-glib
 BuildRequires:	cargo
