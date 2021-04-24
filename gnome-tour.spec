@@ -2,7 +2,7 @@ Summary:	GNOME Tour and Greeter
 Summary(pl.UTF-8):	Przewodnik i powitanie środowiska GNOME
 Name:		gnome-tour
 Version:	40.0
-Release:	2
+Release:	3
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-tour/40/%{name}-%{version}.tar.xz
@@ -59,7 +59,7 @@ export PKG_CONFIG_ALLOW_CROSS=1
 %endif
 %meson build
 
-%ninja_build -C build || ls -lR
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
