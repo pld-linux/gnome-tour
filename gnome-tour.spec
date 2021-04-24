@@ -59,7 +59,7 @@ export PKG_CONFIG_ALLOW_CROSS=1
 %endif
 %meson build
 
-%ninja_build -C build
+%ninja_build -C build || ls -lR
 
 %install
 rm -rf $RPM_BUILD_ROOT
