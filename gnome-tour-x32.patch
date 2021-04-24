@@ -1,5 +1,5 @@
---- ../BUILD/gnome-tour-40.0/build-aux/cargo.sh.orig	2021-03-23 16:31:44.642007800 +0100
-+++ ../BUILD/gnome-tour-40.0/build-aux/cargo.sh	2021-04-24 17:48:45.504234520 +0200
+--- gnome-tour-40.0/build-aux/cargo.sh.orig	2021-03-23 16:31:44.642007800 +0100
++++ gnome-tour-40.0/build-aux/cargo.sh	2021-04-24 17:48:45.504234520 +0200
 @@ -2,19 +2,20 @@
  
  export MESON_BUILD_ROOT="$1"
