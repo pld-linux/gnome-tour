@@ -17,13 +17,13 @@
 +    cargo build $CARGO_TARGET_OPT --manifest-path \
          "$MESON_SOURCE_ROOT"/Cargo.toml $FEATURES && \
 -        cp "$CARGO_TARGET_DIR"/debug/$5 $3
-+        cp "$CARGO_TARGET_DIR"/debug/x86_64-unknown-linux-gnux32/$5 $3
++        cp "$CARGO_TARGET_DIR"/x86_64-unknown-linux-gnux32/debug/$5 $3
  else
      echo "RELEASE MODE"
 -    cargo build --manifest-path \
 +    cargo build $CARGO_TARGET_OPT --manifest-path \
          "$MESON_SOURCE_ROOT"/Cargo.toml $FEATURES --release && \
 -        cp "$CARGO_TARGET_DIR"/release/$5 $3
-+        cp "$CARGO_TARGET_DIR"/release/x86_64-unknown-linux-gnux32/$5 $3
++        cp "$CARGO_TARGET_DIR"/x86_64-unknown-linux-gnux32/release/$5 $3
  fi
  
