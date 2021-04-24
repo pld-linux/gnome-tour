@@ -7,6 +7,7 @@ License:	GPL v3+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-tour/40/%{name}-%{version}.tar.xz
 # Source0-md5:	d5ca4c8a9b248017c4e75fa4722caad0
+Patch0:		%{name}-x32.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-tour
 BuildRequires:	appstream-glib
 BuildRequires:	cargo
@@ -48,6 +49,9 @@ Przewodnik i powitanie dla środowiska GNOME.
 
 %prep
 %setup -q
+%ifarch x32
+%patch0 -p1
+%endif
 
 %build
 %meson build
