@@ -54,6 +54,9 @@ Przewodnik i powitanie dla środowiska GNOME.
 %endif
 
 %build
+%ifarch x32
+export PKG_CONFIG_ALLOW_CROSS=1
+%endif
 %meson build
 
 %ninja_build -C build
