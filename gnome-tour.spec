@@ -59,6 +59,9 @@ export PKG_CONFIG_ALLOW_CROSS=1
 %install
 rm -rf $RPM_BUILD_ROOT
 
+%ifarch x32
+export PKG_CONFIG_ALLOW_CROSS=1
+%endif
 %ninja_install -C build
 
 %find_lang %{name}
