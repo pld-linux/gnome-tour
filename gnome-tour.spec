@@ -1,27 +1,24 @@
 Summary:	GNOME Tour and Greeter
 Summary(pl.UTF-8):	Przewodnik i powitanie środowiska GNOME
 Name:		gnome-tour
-Version:	40.1
-Release:	2
+Version:	42.0
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-tour/40/%{name}-%{version}.tar.xz
-# Source0-md5:	70d9f65ce8f55e46bffdfe61161a373c
-Patch0:		%{name}-x32.patch
+Source0:	https://download.gnome.org/sources/gnome-tour/42/%{name}-%{version}.tar.xz
+# Source0-md5:	2accd38e1f15f4ac477d614ef2b56eda
+Patch0:		%{name}-no-update.patch
+Patch1:		%{name}-x32.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-tour
 BuildRequires:	appstream-glib
 BuildRequires:	cargo
 BuildRequires:	gdk-pixbuf2-devel >= 2.0
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.64
-BuildRequires:	gstreamer-devel >= 1.12
-# pkgconfig(gstreamer-player-1.0)
-BuildRequires:	gstreamer-plugins-bad-devel >= 1.12
-# pkgconfig(gstreamer-video-1.0)
-BuildRequires:	gstreamer-plugins-base-devel >= 1.12
-BuildRequires:	gtk+3-devel >= 3.16
-BuildRequires:	libhandy1-devel >= 1
-BuildRequires:	meson >= 0.50
+BuildRequires:	graphene-devel
+BuildRequires:	gtk4-devel >= 4.4
+BuildRequires:	libadwaita-devel >= 1
+BuildRequires:	meson >= 0.59
 BuildRequires:	ninja >= 1.5
 BuildRequires:	rpmbuild(macros) >= 2.005
 BuildRequires:	rust
@@ -29,12 +26,9 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	glib2 >= 1:2.64
-Requires:	gstreamer >= 1.12
-Requires:	gstreamer-plugins-bad >= 1.12
-Requires:	gstreamer-plugins-base >= 1.12
-Requires:	gtk+3 >= 3.16
+Requires:	gtk4 >= 4.4
 Requires:	hicolor-icon-theme
-Requires:	libhandy1 >= 1
+Requires:	libadwaita >= 1
 ExclusiveArch:	%{x8664} %{ix86} x32 aarch64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -49,8 +43,9 @@ Przewodnik i powitanie dla środowiska GNOME.
 
 %prep
 %setup -q
-%ifarch x32
 %patch0 -p1
+%ifarch x32
+%patch1 -p1
 %endif
 
 %build
@@ -81,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README.md
 %attr(755,root,root) %{_bindir}/gnome-tour
+%{_datadir}/gnome-tour
 %{_datadir}/metainfo/org.gnome.Tour.metainfo.xml
 %{_desktopdir}/org.gnome.Tour.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Tour.svg
