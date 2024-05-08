@@ -1,40 +1,39 @@
 Summary:	GNOME Tour and Greeter
 Summary(pl.UTF-8):	Przewodnik i powitanie środowiska GNOME
 Name:		gnome-tour
-Version:	45.0
+Version:	46.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-tour/45/%{name}-%{version}.tar.xz
-# Source0-md5:	5e8d900c21b36800e3f0b22772f45c88
+Source0:	https://download.gnome.org/sources/gnome-tour/46/%{name}-%{version}.tar.xz
+# Source0-md5:	530f98666b6c2f6f7f50ae895636686c
 Patch0:		%{name}-no-update.patch
 Patch1:		%{name}-x32.patch
-Patch2:		%{name}-pango.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-tour
 BuildRequires:	appstream-glib
 BuildRequires:	cairo-devel >= 1.16
 BuildRequires:	cargo
 BuildRequires:	gdk-pixbuf2-devel >= 2.42
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.77
+BuildRequires:	glib2-devel >= 1:2.78
 BuildRequires:	graphene-devel
-BuildRequires:	gtk4-devel >= 4.11
+BuildRequires:	gtk4-devel >= 4.12
 BuildRequires:	libadwaita-devel >= 1
 BuildRequires:	meson >= 0.59
 BuildRequires:	ninja >= 1.5
-BuildRequires:	pango-devel >= 1:1.49.2
+BuildRequires:	pango-devel >= 1:1.52.0
 BuildRequires:	rpmbuild(macros) >= 2.005
-BuildRequires:	rust
+BuildRequires:	rust >= 1.70
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	cairo >= 1.16
 Requires:	gdk-pixbuf2 >= 2.42
-Requires:	glib2 >= 1:2.77
-Requires:	gtk4 >= 4.11
+Requires:	glib2 >= 1:2.78
+Requires:	gtk4 >= 4.12
 Requires:	hicolor-icon-theme
 Requires:	libadwaita >= 1
-Requires:	pango >= 1:1.49.2
+Requires:	pango >= 1:1.52.0
 ExclusiveArch:	%{x8664} %{ix86} x32 aarch64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,7 +52,6 @@ Przewodnik i powitanie dla środowiska GNOME.
 %ifarch x32
 %patch1 -p1
 %endif
-%patch2 -p1
 
 %build
 %ifarch x32
