@@ -1,12 +1,12 @@
 Summary:	GNOME Tour and Greeter
 Summary(pl.UTF-8):	Przewodnik i powitanie środowiska GNOME
 Name:		gnome-tour
-Version:	47.0
+Version:	48.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-tour/47/%{name}-%{version}.tar.xz
-# Source0-md5:	7f65ca9d1528cbbe0116033970e695a6
+Source0:	https://download.gnome.org/sources/gnome-tour/48/%{name}-%{version}.tar.xz
+# Source0-md5:	e5b1e9524a797e29f9b7a43d244757e8
 Patch0:		%{name}-no-update.patch
 Patch1:		%{name}-x32.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-tour
@@ -15,9 +15,9 @@ BuildRequires:	cairo-devel >= 1.16
 BuildRequires:	cargo
 BuildRequires:	gdk-pixbuf2-devel >= 2.42
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.78
+BuildRequires:	glib2-devel >= 1:2.82
 BuildRequires:	graphene-devel
-BuildRequires:	gtk4-devel >= 4.12
+BuildRequires:	gtk4-devel >= 4.16
 BuildRequires:	libadwaita-devel >= 1
 BuildRequires:	meson >= 0.59
 BuildRequires:	ninja >= 1.5
@@ -29,8 +29,8 @@ BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	cairo >= 1.16
 Requires:	gdk-pixbuf2 >= 2.42
-Requires:	glib2 >= 1:2.78
-Requires:	gtk4 >= 4.12
+Requires:	glib2 >= 1:2.82
+Requires:	gtk4 >= 4.16
 Requires:	hicolor-icon-theme
 Requires:	libadwaita >= 1
 Requires:	pango >= 1:1.52.0
