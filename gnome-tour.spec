@@ -22,7 +22,7 @@ BuildRequires:	libadwaita-devel >= 1
 BuildRequires:	meson >= 0.59
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pango-devel >= 1:1.52.0
-BuildRequires:	rpmbuild(macros) >= 2.005
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	rust >= 1.70
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -57,9 +57,9 @@ Przewodnik i powitanie dla środowiska GNOME.
 %ifarch x32
 export PKG_CONFIG_ALLOW_CROSS=1
 %endif
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -67,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 %ifarch x32
 export PKG_CONFIG_ALLOW_CROSS=1
 %endif
-%ninja_install -C build
+%meson_install
 
 %find_lang %{name}
 
