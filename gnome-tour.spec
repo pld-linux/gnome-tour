@@ -48,9 +48,9 @@ Przewodnik i powitanie dla środowiska GNOME.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 %ifarch x32
-%patch1 -p1
+%patch -P1 -p1
 %endif
 
 %build
